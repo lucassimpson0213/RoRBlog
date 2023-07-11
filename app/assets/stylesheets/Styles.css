@@ -1,0 +1,79 @@
+* {
+    text-rendering:optimizeLegibility;
+    font-family: sans-serif;
+    font-weight:400;
+
+
+}
+
+
+.blog {
+    text-align: center;
+    color: white;
+}
+
+.container {
+    display:flex;
+    justify-content:center;
+
+   flex:1;
+
+
+}
+
+.item  {
+    display:flex;
+    flex:1;
+
+    color: white;
+    padding: 10px;
+    justify-content: flex-end;
+
+}
+
+.link {
+    display:flex;
+    flex:1;
+
+    color: white;
+    padding: 10px;
+    justify-content: flex-start;
+}
+
+
+.title {
+    display: inline;
+    margin: 20px;
+    padding: 30px;
+    color: white;
+}
+
+
+
+
+
+
+
+a {
+    display: flex;
+    color:white;
+}
+
+img {
+
+    margin: auto;
+    display: block;
+    height: 300px;
+    width: 500px;
+
+
+}
+html {
+    background-color: rgb(51, 50, 50)
+}
+
+h1 {
+    color: white;
+    text-align: center;
+
+}

@@ -48,12 +48,13 @@ class PostsController < ApplicationController
     # form for editing the post
   end
 
-  def update
-    # code to figure out which post we're trying to update, then
-    # actually update the attributes of that post. Once that's
-    # done, redirect us to somewhere like the Show page for that
-    # post
+  def first
+    @post = Posts.first
   end
+
+  def update
+
+    end
 
   def destroy
     # very simple code to find the post we're referring to and

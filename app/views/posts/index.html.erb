@@ -1,8 +1,20 @@
-# frozen_string_literal: true
-<h1>Posts</h1>
-<ul>
-  <% @post.each do |post| %>
-    <li> <%= link_to post.title , post_path(post) %></li>
 
-  <% end %>
-</ul>
+
+  <%= stylesheet_link_tag 'Styles' %>
+
+<h1>Slice of Tech</h1>
+<img src = "https://androidbuddy.net/wp-content/uploads/2020/01/Full-Stack-Developer.jpg" >
+
+  <h2 class = "blog"> Most recent Blog Posts</h2>
+
+  <% @post.each do |post| %>
+    <div class = "container">
+    <div class = "item"> <%= post.date %></div>
+    <div class = "link"> <%= link_to(post.title, post_path(post)) %> </div>
+    </div>
+    <% end %>
+
+
+
+
+
