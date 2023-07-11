@@ -1,0 +1,23 @@
+                                            LAYOUTS
+
+In a Ruby on Rails application, a view is a template that generates the HTML content to be displayed to
+ the user. Views are typically associated with a specific controller action and are responsible for
+ generating the content for that action. For example, if you have a PostsController with an index
+action that displays a list of posts, you would have an index.html.erb view file that generates the HTML
+ for displaying the list of posts.
+
+A layout, on the other hand, is a template that defines the common structure of your pages.
+Layouts typically include elements such as the page header, footer, and navigation menu that are
+shared across multiple pages. When you render a view within a layout, the content of the view is
+inserted into the layout at the location of the yield statement.
+
+ The main difference between a view and a layout is their purpose: views generate the content specific
+to a particular controller action, while layouts define the common structure of your pages. By using
+layouts, you can avoid duplicating common elements in each of your views and keep your code DRY
+(Don’t Repeat Yourself). Is there anything else you would like to know?
+
+The Yield in the layout file allows for all of the content of the index view that's rendered to
+ be inserted into it.
+
+ The layout file will be rendered in all of the following views: new. html.erb, index.html.erb,
+ show.html.erb.
