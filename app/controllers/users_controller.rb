@@ -1,26 +1,25 @@
 # frozen_string_literal: true
 
-class UsersController < ApplicationController
+class UsersController < ActiveRecord::Base
 
-  validate
-
-
-  def index
-    @users = Users.all
+def index
+    @users = User.all
   end
-
 
   def create
-    @users = Users.new(users_params)
+    @user = User.new(users_params)
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+  end
+
+  private
+
+  def users_params
+    params.require(:user).permit(:name, :password)
   end
 end
-
-private
-
-def users_params
-  params.require(:users).permit(:name,:password)
-end
-
-
 
 
