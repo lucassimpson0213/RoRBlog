@@ -1,0 +1,25 @@
+
+
+  <%= stylesheet_link_tag 'Styles' %>
+
+<h1>Slice of Tech</h1>
+<img src = "https://androidbuddy.net/wp-content/uploads/2020/01/Full-Stack-Developer.jpg" >
+
+  <h2 class = "blog"> Most recent Blog Posts</h2>
+
+
+
+  # In the view template
+  <% @posts.each do |post| %>
+    <div class="container">
+      <div class="user"><%= post.user.name %></div>
+      <div class="item"><%= post.date %></div>
+      <div class="link"><%= link_to(post.title, post_path(post)) %></div>
+    </div>
+  <% end %>
+
+
+
+
+
+

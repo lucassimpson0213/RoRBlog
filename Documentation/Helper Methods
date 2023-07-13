@@ -1,0 +1,32 @@
+helper methods that help you generate certain outcomes
+
+time_ago_in_words: displays the time difference between two dates in words1.
+number_to_human: converts a number into a human-readable format1.
+link_to: creates an HTML link2.
+form_for: generates a form for a model object2.
+render: redirects to another page if something happens in a controller
+find: finds a specific model object in the database usage: @article = Article.find(params[:id])
+cleaner method: params.require(:article).permit(:title, :location, :excerpt, :body,
+      :published_at)
+
+render and redirect 
+render and redirect_to are two methods provided by Rails that are used to control the flow of a request within a controller action.
+
+render is used to specify which view or asset should be used to construct the response that is sent back to the client. It allows you to specify which template, layout, or partial should be used, as well as any instance variables that should be passed to the view1.
+
+redirect_to, on the other hand, sends an HTTP redirect to the client, instructing it to send a new request to a different URL. This can be used to redirect the user to a different page within your application or to an external website2.
+
+Here’s an example of how these methods might be used in a controller action:
+
+def create
+  @post = Post.new(post_params)
+  if @post.save
+    # Redirects the user to the show page for the newly created post
+    redirect_to @post
+  else
+    # Renders the new post form again, displaying any validation errors
+    render 'new'
+  end
+end
+Copy
+In this example, if the @post object is successfully saved to the database, the redirect_to method is called, which redirects the user to the show page for the newly created post. If the @post object is not saved (e.g., due to validation errors), the render method is called, which renders the new template again, allowing the user to correct any errors and resubmit the form.

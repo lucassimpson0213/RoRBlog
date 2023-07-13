@@ -1,0 +1,7 @@
+Sure! In a Rails application, controllers are responsible for handling incoming HTTP requests and providing a response. They do this by mapping the request to a specific action (method) within the controller. For example, a GET request to the /posts URL might be mapped to the index action of the PostsController, which would retrieve all of the posts from the database and render them in a view.
+
+Each action within a controller typically has a corresponding view file, which is used to generate the HTML that is sent back to the client. For example, the index action might have a corresponding view file named index.html.erb, while the show action might have a corresponding view file named show.html.erb.
+
+In order for requests to be routed to the correct controller and action, routes must be specified in the routes.rb file. This file contains instructions for how incoming requests should be mapped to specific controllers and actions.
+
+Rails follows a principle called “convention over configuration”, which means that many common tasks are handled automatically based on naming conventions. For example, if you follow the convention of naming your controllers and actions in a certain way, Rails will automatically generate routes for you.

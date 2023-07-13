@@ -1,0 +1,29 @@
+Flash messages are a way to communicate information with the users of your Rails application. They are brief, temporary messages that can be used to display confirmation or error messages. You can set these flash messages in your controllers and render them in your views1.
+
+By default, Ruby on Rails provides two types of flash messages, :notice and :alert. Hence, we can use notice messages to send the user little pieces of information and confirmations, and alert messages to raise errors2.
+
+Would you like more information on how to use flash messages in Rails?
+
+Received message. Flash messages are a way to communicate information with the users of your Rails application. They are brief, temporary messages that can be used to display confirmation or error messages. You can set these flash messages in your controllers and render them in your views. By default, Ruby on Rails provides two types of flash messages, `:notice` and `:alert`. Hence, we can use notice messages to send the user little pieces of information and confirmations, and alert messages to raise errors. Would you like more information on how to use flash messages in Rails?
+.
+You can work with flash messages using the flash helper method. It behaves a lot like a Ruby hash. The flash object has methods like keys, any? or each & you can access a particular message with []. By default, you have notice and alert. Here’s an example of how to use it:
+
+flash.alert = "User not found."
+Copy
+Or if you prefer:
+
+flash[:alert] = "User not found."
+Copy
+You can use this code inside your controller actions, like index, create, new, etc. Another way is this:
+
+redirect_to :books_path, notice: "Book not found"
+Copy
+This allows you to redirect & create a flash message in one step.
+
+Flash messages aren’t shown automatically. You have to render them inside one of your views so users can see them. Consider adding this to your application layout. Here’s a code example:
+
+<% flash.each do |type, msg| %>
+  <%= msg %>
+<% end %>
+Copy
+Put this wherever you want to show your notice, usually at the top of the page, below the menu bar. Remember: Once you render a message it’ll be removed from flash, so it won’t be shown again.

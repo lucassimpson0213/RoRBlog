@@ -1,0 +1,34 @@
+There are many commands available for both databases and the Rails console. 
+Some common Rails console commands include rails console, rails server, rails test,
+ rails generate, rails db:migrate, rails db:create, rails routes, and rails dbconsole1. 
+ You can get a list of all available Rails commands by typing rails --help in the console1.
+
+In terms of database commands, there are many SQL commands that can be used to interact with databases. 
+Some common ones include SELECT, INSERT, UPDATE, and DELETE. These commands allow you to query, insert, 
+update, and delete data from a database.
+
+to start web application use bundle exec rails s.
+use bundle for any commands from now on.
+
+BUNDLER:::
+Bundler is a tool that helps manage dependencies for Ruby projects. To use Bundler, you need to specify your dependencies in a Gemfile in your project’s root directory. Then, you can install all of the required gems from your specified sources using the command bundle install1. You can also update gems with Bundler1.
+
+Here are the steps to get started with Bundler:
+
+Specify your dependencies in a Gemfile in your project’s root directory. For example:
+source 'https://rubygems.org'
+gem 'nokogiri'
+gem 'rack', '~> 2.2.4'
+gem 'rspec'
+Copy
+Install all of the required gems from your specified sources by running bundle install in the command line2.
+
+Add the Gemfile and Gemfile.lock to your repository by running git add Gemfile Gemfile.lock. This ensures that other developers on your app, as well as your deployment environment, will all use the same third-party code that you are using now2.
+
+Inside your app, load up the bundled environment by adding the following code at the top of your application file:
+
+require 'bundler/setup'
+# require your gems as usual
+require 'nokogiri'
+Copy
+Is there anything else you’d like to know? 😊
