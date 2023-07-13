@@ -3,5 +3,9 @@
 On my landing page I used two parent containers with two individual child divs in them
 I used the instance variable @post and the .each method to iterate through all of the posts and display
 them on the screen placing the date div and title div in a parent container.
+<<<<<<< HEAD
 I used the link_to method which creates an anchor element that links to the post in question.
+=======
+I used the link_to method which creates an anchor element in html that links to the post in question.
+>>>>>>> 40bcedbd67370f9c55e2630e070a1c547da4711a
 this calls the show method and and proceeds to call the corresponding post with it's ID.

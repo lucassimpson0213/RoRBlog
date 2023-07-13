@@ -2,6 +2,7 @@
 
 # frozen_string_literal: true
 
+<<<<<<< HEAD
 class PostsController < ApplicationController
 
 
@@ -20,6 +21,17 @@ class PostsController < ApplicationController
   end
 
 
+=======
+class PostsController < ActiveRecord::Base
+def index
+    @posts = Post.all
+  end
+
+  def show
+    @post = Post.find(params[:id])
+  end
+
+>>>>>>> 40bcedbd67370f9c55e2630e070a1c547da4711a
   def create
     @post = Post.new(post_params)
 
@@ -30,6 +42,7 @@ class PostsController < ApplicationController
     end
   end
 
+<<<<<<< HEAD
 
 
   def new
@@ -61,12 +74,18 @@ class PostsController < ApplicationController
     # destroy it.  Once that's done, redirect us to somewhere fun.
   end
 
+=======
+>>>>>>> 40bcedbd67370f9c55e2630e070a1c547da4711a
   private
 
   def post_params
     params.require(:post).permit(:title, :body)
   end
+<<<<<<< HEAD
 
 
 end
 
+=======
+end
+>>>>>>> 40bcedbd67370f9c55e2630e070a1c547da4711a
