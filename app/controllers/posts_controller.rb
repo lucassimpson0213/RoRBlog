@@ -2,26 +2,7 @@
 
 # frozen_string_literal: true
 
-<<<<<<< HEAD
-class PostsController < ApplicationController
 
-
-  def index
-    def index
-      @posts = Posts.includes(:user).all
-    end
-  end
-
-
-
-  def show
-    @post = Posts.find(params[:id])
-
-
-  end
-
-
-=======
 class PostsController < ActiveRecord::Base
 def index
     @posts = Post.all
@@ -31,7 +12,7 @@ def index
     @post = Post.find(params[:id])
   end
 
->>>>>>> 40bcedbd67370f9c55e2630e070a1c547da4711a
+
   def create
     @post = Post.new(post_params)
 
@@ -42,7 +23,7 @@ def index
     end
   end
 
-<<<<<<< HEAD
+
 
 
   def new
@@ -74,18 +55,17 @@ def index
     # destroy it.  Once that's done, redirect us to somewhere fun.
   end
 
-=======
->>>>>>> 40bcedbd67370f9c55e2630e070a1c547da4711a
+
+
   private
 
   def post_params
     params.require(:post).permit(:title, :body)
   end
-<<<<<<< HEAD
 
 
 end
 
-=======
-end
->>>>>>> 40bcedbd67370f9c55e2630e070a1c547da4711a
+
+
+

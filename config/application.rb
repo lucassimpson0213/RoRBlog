@@ -6,11 +6,7 @@ require "rails/all"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-<<<<<<< HEAD
-module RailsBlog20
-=======
 module Blog
->>>>>>> 40bcedbd67370f9c55e2630e070a1c547da4711a
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
