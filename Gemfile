@@ -7,6 +7,8 @@ ruby "3.2.2"
 
 gem "rails", "~> 7.0.6"
 
+gem 'bootstrap', '~> 5.2.3'
+
 
 
 

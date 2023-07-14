@@ -3,18 +3,20 @@
 # frozen_string_literal: true
 
 
-class PostsController < ActiveRecord::Base
+class PostsController < ApplicationController
 def index
-    @posts = Post.all
+    @posts = Posts.all
+    render layout: 'application'
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Posts.find(params[:id])
+    render layout: 'application'
   end
 
 
   def create
-    @post = Post.new(post_params)
+    @post = Posts.new(post_params)
 
     if @post.save
       redirect_to @post

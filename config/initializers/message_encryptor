@@ -1,0 +1,1 @@
+ActiveSupport::MessageEncryptor.use_authenticated_message_encryption = true

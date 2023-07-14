@@ -1,18 +1,30 @@
 
 
-  <%= stylesheet_link_tag 'Styles' %>
+  <%= stylesheet_link_tag 'Styles', media: 'all' %>
 
-<h1>Slice of Tech</h1>
-<img src = "https://androidbuddy.net/wp-content/uploads/2020/01/Full-Stack-Developer.jpg" >
 
-  <h2 class = "blog"> Most recent Blog Posts</h2>
 
-  <% @post.each do |post| %>
-    <div class = "container">
-    <div class = "item"> <%= post.date %></div>
-    <div class = "link"> <%= link_to(post.title, post_path(post)) %> </div>
+
+  <p class="h1 text-center fs-3 --bs-emphasis-color-rgb text-white m-3 "> Most Recent Blog Posts</p>
+
+ 
+
+
+
+<div class="row">
+  <% @posts.each do |post| %>
+    <div class="col-sm-3 mt-3">
+      <div class="card" style="width: 18rem;">
+        <img src="https://th.bing.com/th/id/OIP.AKL8lhKfnPcVSElR1r1lpAHaEK?w=290&h=180&c=7&r=0&o=5&dpr=2&pid=1.7" class="card-img-top img-thumbnail" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><%= post.title %></h5>
+          <p class="card-text"><%= post.body %></p>
+          <%= link_to post.title , post_path(post), class: "btn btn-primary", method: :get %>
+        </div>
+      </div>
     </div>
-    <% end %>
+  <% end %>
+</div>
 
 
 
