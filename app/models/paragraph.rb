@@ -1,3 +1,8 @@
 class Paragraph < ApplicationRecord 
- belongs_to :posts
+    attribute :body, validates :body, presence: true
+    
+    belongs_to :posts
+
+
+ 
 end 
