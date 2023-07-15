@@ -13,6 +13,9 @@ class Posts < ApplicationRecord
   validates :date, presence: true
   validates :author, presence: true
 
+  has_many :paragraphs
+  
+
 
   # Associations
   
