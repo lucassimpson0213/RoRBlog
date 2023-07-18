@@ -14,23 +14,6 @@ class Posts < ApplicationRecord
   validates :author, presence: true
 
   has_many :sections, dependent: :destroy
-  has_many :paragraphs, through :sections, dependent: destory
+  has_many :paragraphs, through: :sections, dependent: :destroy
   
-
-
-  # Associations
-  
-
-
-
-
-  # Associations
-
-
-  # Methods
-
-
-
-
-
 end
