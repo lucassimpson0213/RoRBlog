@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_18_021734) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_20_013354) do
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "body"
@@ -24,7 +24,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_18_021734) do
     t.string "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "section_id"
     t.index ["posts_id"], name: "index_paragraphs_on_posts_id"
+    t.index ["section_id"], name: "index_paragraphs_on_section_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -41,6 +43,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_18_021734) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "title"
+    t.integer "post_id"
+    t.index ["post_id"], name: "index_sections_on_post_id"
     t.index ["posts_id"], name: "index_sections_on_posts_id"
   end
 
@@ -52,6 +56,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_18_021734) do
   end
 
   add_foreign_key "paragraphs", "posts", column: "posts_id"
+  add_foreign_key "paragraphs", "sections"
   add_foreign_key "posts", "users"
+  add_foreign_key "sections", "posts"
   add_foreign_key "sections", "posts", column: "posts_id"
 end
