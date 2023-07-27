@@ -1,5 +1,6 @@
 class Paragraph < ApplicationRecord 
-    attribute :body, validates :body, presence: true
+    attribute :bodyof , :text
+    validates :body, presence: true
     belongs_to :section
 
 

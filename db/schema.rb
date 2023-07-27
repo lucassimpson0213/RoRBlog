@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_20_013354) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_27_175431) do
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "body"
@@ -25,6 +25,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_20_013354) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "section_id"
+    t.text "bodyof"
     t.index ["posts_id"], name: "index_paragraphs_on_posts_id"
     t.index ["section_id"], name: "index_paragraphs_on_section_id"
   end
@@ -35,6 +36,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_20_013354) do
     t.date "date"
     t.integer "user_id"
     t.string "author"
+    t.text "bodyof"
   end
 
   create_table "sections", force: :cascade do |t|
