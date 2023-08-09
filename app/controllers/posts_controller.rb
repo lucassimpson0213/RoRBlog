@@ -11,7 +11,7 @@ def index
 
   def show
     @post = Posts.find(params[:id])
-    render layout: 'application'
+    @paragraphs = @post.paragraphs
   end
 
 

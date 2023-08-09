@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_27_175431) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_09_233456) do
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "body"
@@ -26,6 +26,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_27_175431) do
     t.datetime "updated_at", null: false
     t.integer "section_id"
     t.text "bodyof"
+    t.integer "post_id", null: false
+    t.index ["post_id"], name: "index_paragraphs_on_post_id"
     t.index ["posts_id"], name: "index_paragraphs_on_posts_id"
     t.index ["section_id"], name: "index_paragraphs_on_section_id"
   end
@@ -57,6 +59,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_27_175431) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "paragraphs", "posts"
   add_foreign_key "paragraphs", "posts", column: "posts_id"
   add_foreign_key "paragraphs", "sections"
   add_foreign_key "posts", "users"

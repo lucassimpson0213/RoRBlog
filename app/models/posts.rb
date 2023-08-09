@@ -13,7 +13,6 @@ class Posts < ApplicationRecord
   validates :date, presence: true
   validates :author, presence: true
 
-  has_many :sections, dependent: :destroy
-  has_many :paragraphs, through: :sections, dependent: :destroy
+  has_many :paragraphs
   
 end
